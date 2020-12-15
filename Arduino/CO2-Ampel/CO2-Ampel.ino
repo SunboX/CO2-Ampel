@@ -94,12 +94,12 @@ void loop() { // Kontinuierliche Wiederholung
     show(10, 0xFF5D00);
   } else if (CO2 < 1600) {
     show(11, 0xFF2E00);
-  } else if (CO2 < 1800) {
+  } else if (CO2 < 2000) {
     show(12, 0xFF0000);
   }
 
   // Alert
-  if (CO2 >= 1800) {
+  if (CO2 >= 2000) {
     show(0, 0x000000);
     delay(1000);
     show(12, 0xFF0000);
