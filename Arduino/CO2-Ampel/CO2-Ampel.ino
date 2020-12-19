@@ -38,7 +38,7 @@ void setup() { // Einmalige Initialisierung
 
   WiFi.forceSleepBegin(); // Wifi off
 
-  Wire.begin(D2, D1); // ---- Initialisiere den I2C-Bus - D1 & D2 might be sqithed, depending on how you wired it!
+  Wire.begin(D2, D1); // ---- Initialisiere den I2C-Bus
 
   //Wire.setClock(100000L);            // 100 kHz SCD30
   //Wire.setClockStretchLimit(200000L);// CO2-SCD30
