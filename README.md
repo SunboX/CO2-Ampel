@@ -12,4 +12,7 @@
 
 ## Zusammenbau Elektronik
 
+![](Fotos/CO2-Sensor_Steckplatine.png)
+![](Fotos/CO2-Sensor_Schaltplan.png)
+
 - TBD
