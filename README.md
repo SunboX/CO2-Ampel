@@ -1,5 +1,11 @@
 # CO2-Ampel
 
+Angeregt durch den "CO2-Warner für die Schule" Artikel im MAKE: Magazin 5/2020 {1] habe ich einen CO2 Warner für mein Home Office gebaut.
+
+Zu viel CO2 in der Raumluft vermehrt nicht nur Ansteckungen, sondern führt auch zu starken Kopfschmerzen, Leistungsabfall, Konzentrationsschwäche und zu erhöhter Atemfrequenz.
+
+Je nach CO2 Anteil in der Luft nimmt die LED Anzeige des Sensor zu. Dabei Ändert sich die Farbe aller LEDs von Grün ("gute" Luft), über Orange bis zu Rot. Steigt der Wert über 2000 ppm, fängt die Anzeige zusätzlich an zu blinken. Dann sollte dringend gelüftet werden.
+
 ## BOM
 
 - Sensirion SCD30 (https://a.aliexpress.com/_mq1Fatr)
@@ -15,4 +21,8 @@
 ![](Fotos/CO2-Sensor_Steckplatine.png)
 ![](Fotos/CO2-Sensor_Schaltplan.png)
 
-- TBD
+Die Anschlüsse anhand der zeichnungen oben verbinden. Je nachdem, ob ihr Tx/Rx und D1/D2 richtig oder "falsch" verbunden hab, müsst ihr `Wire.begin(D2, D1);` im Code noch anpassen. (D1 und D2 vertauschen!)
+
+
+
+[1] Zum Artikel aus dem MAKE: Magazin: https://www.heise.de/select/make/2020/5/2022015381334973804
