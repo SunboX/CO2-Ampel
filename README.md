@@ -1,6 +1,6 @@
 # CO2-Ampel
 
-![](PXL_20201122_020709844.jpg)
+![](Fotos/PXL_20201122_020709844.jpg)
 
 Angeregt durch den "CO2-Warner für die Schule" Artikel im MAKE: Magazin 5/2020 {1] habe ich einen CO2 Warner für mein Home Office gebaut.
 
@@ -10,7 +10,7 @@ Je nach CO2 Anteil in der Luft nimmt die LED Anzeige des Sensor zu. Dabei Änder
 
 ## BOM
 
-![](PXL_20201120_171448797.jpg)
+![](Fotos/PXL_20201120_171448797.jpg)
 
 - Sensirion SCD30 (https://a.aliexpress.com/_mq1Fatr)
 - Wemos D1 Mini (https://www.amazon.de/dp/B08BTYHJM1/ref=cm_sw_r_cp_apa_fabc_Veo3Fb7N104TA)
@@ -27,7 +27,7 @@ Je nach CO2 Anteil in der Luft nimmt die LED Anzeige des Sensor zu. Dabei Änder
 
 Die Anschlüsse anhand der Zeichnungen oben verbinden. Je nachdem, ob ihr Tx/Rx und D1/D2 richtig oder "falsch" verbunden hab, müsst ihr `Wire.begin(D2, D1);` im Code noch anpassen. (D1 und D2 vertauschen!)
 
-![](PXL_20201121_220829026.jpg)
+![](Fotos/PXL_20201121_220829026.jpg)
 
 ## Software Installation
 
@@ -41,15 +41,15 @@ Aus dem `/Schnittmuster` Ordner das Dokument "Anzeige" auf das 70g papier und da
 
 Eines der beiden Passepartouts mit einem Cutter-Messer und Stahllineal ausschneiden. Das zweite Passepartout dient als "Trennschicht" zwischen LED Ring und Wemos/CO2 Sensor.
 
-![](PXL_20201122_005410735.jpg)
+![](Fotos/PXL_20201122_005410735.jpg)
 
 ## Zusammenbau
 
 Den Bilderrahmen auspacken und die Ecken des Rückteils am besten mit einem Cutter-messer und Stahllineal abschneiden, damit genügend Zirkulation entsteht.
 
-![](PXL_20201121_221511011.jpg)
+![](Fotos/PXL_20201121_221511011.jpg)
 
-![](PXL_20201122_010646280.jpg)
+![](Fotos/PXL_20201122_010646280.jpg)
 
 Nun die "Anzeige" auf das Glas legen. Das ausgeschnittene Passepartout über die einzelnen LEDs "stülpen". Das zweite Passepartout mit einem Ausschnitt für die Kabel des LED Ring versehen und zwischen Ring und Wemos/Sensor stecken. Gegebenfalls mit etwas Tesa fixieren. Das USB Kabel einstecken und alles zusammen in den Bilderrahmen, auf die Anzeige legen. Als nächstes den inneren Rahmen wieder einfügen. Nun den Decken mit den fehlenden Ecken wieder montieren und den Bilderrahmen "verriegeln". 
 
