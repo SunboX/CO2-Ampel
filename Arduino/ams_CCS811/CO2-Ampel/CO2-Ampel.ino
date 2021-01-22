@@ -59,6 +59,8 @@ void setup() { // Einmalige Initialisierung
     }
   }
 
+  ccs.setDriveMode(CCS811_DRIVE_MODE_1SEC);
+
   // Den LED-Streifen initialisieren und die Helligkeit einstellen
   FastLED.addLeds<NEOPIXEL, PIXEL_PIN>(pixels, NUM_PIXELS); // Init der Fastled-Bibliothek
   FastLED.setBrightness(BRIGHTNESS);

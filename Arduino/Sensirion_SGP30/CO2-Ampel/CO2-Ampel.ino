@@ -1,5 +1,5 @@
 /**
- * Sensirion SCD30
+ * Sensirion SGP30 (CJMCU-30)
  */
 
 #include <paulvha_SCD30.h>

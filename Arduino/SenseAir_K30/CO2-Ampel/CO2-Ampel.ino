@@ -1,8 +1,8 @@
 /**
- * Sensirion SCD30
+ * SenseAir K30
  */
-
-#include <paulvha_SCD30.h>
+ 
+#include <K30_I2C.h>
 #include <Wire.h>
 #include <ESP8266WiFi.h>
 #include <FastLED.h>
@@ -13,7 +13,7 @@
 #define D2 4
 #define D3 0
 
-int CO2 = 0;
+int CO2 = 0 ;
 
 // Anzahl der "NeoPixel"
 #define NUM_PIXELS 12
@@ -34,7 +34,9 @@ CRGB pixels[NUM_PIXELS];
 // Start Position des Cycling-Effekt
 int pixelAddress = 0;
 
-SCD30 airSensorSCD30; // Objekt SDC30 Umweltsensor
+K30_I2C k30 = K30_I2C(0x68);
+
+int rc = 1; // Sensor read return code
 
 void setup() { // Einmalige Initialisierung
   Serial.begin(115200);
@@ -42,7 +44,7 @@ void setup() { // Einmalige Initialisierung
 
   WiFi.forceSleepBegin(); // Wifi off
 
-  Wire.begin(D2, D1); // ---- Initialisiere den I2C-Bus
+  Wire.begin(D1, D2); // ---- Initialisiere den I2C-Bus
 
   //Wire.setClock(100000L);            // 100 kHz SCD30
   //Wire.setClockStretchLimit(200000L);// CO2-SCD30
@@ -51,30 +53,19 @@ void setup() { // Einmalige Initialisierung
     Serial.println("Something wrong with I2C");
   }
 
-  if (airSensorSCD30.begin(Wire, false) == false) {
-    Serial.println("The SCD30 did not respond. Please check wiring.");
-
-    delay(300);
-
-    while (1) {
-      yield();
-      delay(1);
-    }
-  }
-
-  airSensorSCD30.setAutoSelfCalibration(true);
-
-  airSensorSCD30.setMeasurementInterval(5); // CO2-Messung alle 5 s
-
   // Den LED-Streifen initialisieren und die Helligkeit einstellen
   FastLED.addLeds<NEOPIXEL, PIXEL_PIN>(pixels, NUM_PIXELS); // Init der Fastled-Bibliothek
   FastLED.setBrightness(BRIGHTNESS);
 }
 
 void loop() { // Kontinuierliche Wiederholung
-  CO2 = airSensorSCD30.getCO2();
-  Serial.print("CO2:" + String(String(CO2)));
-  Serial.println();
+  rc = k30.readCO2(CO2);
+  if (rc == 0){
+    Serial.print("CO2:" + String(String(CO2)));
+    Serial.println();
+  } else{
+    Serial.print("Failure to read sensor\n");  
+  }
 
   if (CO2 < 600) {
     show(1, 0x00FF00);
